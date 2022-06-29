@@ -1,0 +1,19 @@
+{
+  "name": "fullstack-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maison Moa",
+  "license": "ISC",
+  "dependencies": {
+    "dependencies": "0.0.1",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "node-fetch": "^3.2.3",
+    "nodemon": "^1.18.3",
+    "xhr2": "^0.2.1"
+  }
+}
