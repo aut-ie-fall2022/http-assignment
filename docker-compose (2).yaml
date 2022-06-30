@@ -1,0 +1,28 @@
+version: '3.5'
+
+services:
+  httpbin:
+    container_name: httpbin
+    image: kennethreitz/httpbin
+    #ports:
+    #  - "8080:80"
+  
+      
+          
+  jwtproxy:
+    container_name: jwtproxy
+    image: adrianhesketh/jwtproxy
+    environment:
+       JWTPROXY_REMOTE_URL: "http://httpbin"
+       JWTPROXY_LISTEN_PORT: 80
+       JWTPROXY_ISSUER_0: "example.com"
+       JWTPROXY_PUBLIC_KEY_0: |
+            -----BEGIN PUBLIC KEY-----
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI
+            xMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0Ijo
+            xNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6y
+            JV_adQssw5c
+            -----END PUBLIC KEY-----
+    ports:
+     - "80:80"
+   
